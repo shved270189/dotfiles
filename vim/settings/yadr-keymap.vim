@@ -78,9 +78,9 @@ imap <C-a> <esc>wa
 " " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
 function! OpenNerdTree()
   if &modifiable && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
+    NERDTreeTabsToggle " NERDTreeFind
   else
-    NERDTreeToggle
+    NERDTreeTabsToggle
   endif
 endfunction
 nnoremap <silent> <C-\> :call OpenNerdTree()<CR>
